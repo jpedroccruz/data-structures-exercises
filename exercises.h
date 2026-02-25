@@ -10,6 +10,10 @@ void pause() {
   getchar();
 }
 
+void clear() {
+  system("clear");
+}
+
 void exe1() {
   printf("Cidade natal: Cachoeiro de Itapemirim");
 }
@@ -22,13 +26,26 @@ void exe2() {
 
 void exe3() {
   float number = 75.763289;
+
   printf("Número com 1 casa decimal: %.1f\n", number);
   printf("Número com 2 casas decimais: %.2f\n", number);
   printf("Número com 5 casas decimais: %.5f", number);
 }
 
+
+void exe4() {
+  float height;
+
+  printf("Insira sua altura: ");
+  scanf("%f", &height);
+
+  clear();
+
+  printf("Sua altura é: %.2fm", height);
+}
+
 void exercices(int option) {
-  system("clear");
+  clear();
 
   switch (option) {
     case 0:
@@ -47,6 +64,10 @@ void exercices(int option) {
       exe3();
       break;
 
+    case 4:
+      exe4();
+      break;
+
     default:
       printf("Opção inválida!");
       break;
@@ -59,7 +80,7 @@ void menu(int qtdExercises) {
   int option;
 
   do {
-    system("clear");
+    clear();
 
     printf("========== EXERCÍCIOS LISTA 1 - ESTRUTURA DE DADOS ==========\n\n");
     printf("[ 0 ] SAIR\n");
