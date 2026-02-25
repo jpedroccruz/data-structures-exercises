@@ -12,14 +12,19 @@ void pause() {
 
 void exe1() {
   printf("Cidade natal: Cachoeiro de Itapemirim");
-  pause();
 }
 
 void exe2() {
   printf("Nome: João Pedro\n");
   printf("Idade: 19 anos\n");
   printf("Altura: 1,61m");
-  pause();
+}
+
+void exe3() {
+  float number = 75.763289;
+  printf("Número com 1 casa decimal: %.1f\n", number);
+  printf("Número com 2 casas decimais: %.2f\n", number);
+  printf("Número com 5 casas decimais: %.5f", number);
 }
 
 void exercices(int option) {
@@ -27,6 +32,7 @@ void exercices(int option) {
 
   switch (option) {
     case 0:
+      printf("Você saiu do programa.");
       break;
 
     case 1:
@@ -37,11 +43,16 @@ void exercices(int option) {
       exe2();
       break;
 
+    case 3:
+      exe3();
+      break;
+
     default:
       printf("Opção inválida!");
-      pause();
       break;
   }
+
+  pause();
 }
 
 void menu(int qtdExercises) {
