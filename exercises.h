@@ -21,7 +21,7 @@ void exe1() {
 void exe2() {
   printf("Nome: João Pedro\n");
   printf("Idade: 19 anos\n");
-  printf("Altura: 1,61m");
+  printf("Altura: 1,61 m");
 }
 
 void exe3() {
@@ -36,12 +36,31 @@ void exe3() {
 void exe4() {
   float height;
 
-  printf("Insira sua altura: ");
+  printf("Insira sua altura (em m): ");
   scanf("%f", &height);
 
   clear();
 
-  printf("Sua altura é: %.2fm", height);
+  printf("Sua altura é: %.2f m", height);
+}
+
+void exe5() {
+  float weight[3];
+
+  printf("Insira o seu peso (em kg): ");
+  scanf("%f", &weight[0]);
+
+  printf("Insira o peso da pessoa 1 (em kg): ");
+  scanf("%f", &weight[1]);
+
+  printf("Insira o peso da pessoa 2 (em kg): ");
+  scanf("%f", &weight[2]);
+
+  clear();
+
+  printf("Seu peso: %.2f kg\n", weight[0]);
+  printf("Peso da pessoa 1: %.2f kg\n", weight[1]);
+  printf("Peso da pessoa 2: %.2f kg", weight[2]);
 }
 
 void exercices(int option) {
@@ -66,6 +85,10 @@ void exercices(int option) {
 
     case 4:
       exe4();
+      break;
+    
+    case 5:
+      exe5();
       break;
 
     default:

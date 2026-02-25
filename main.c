@@ -3,5 +3,5 @@
 
 void main() {
   setlocale(LC_ALL, "Portuguese");
-  menu(4);
+  menu(5);
 }
