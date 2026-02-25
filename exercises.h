@@ -11,7 +11,14 @@ void pause() {
 }
 
 void exe1() {
-  printf("Hello World!");
+  printf("Cidade natal: Cachoeiro de Itapemirim");
+  pause();
+}
+
+void exe2() {
+  printf("Nome: João Pedro\n");
+  printf("Idade: 19 anos\n");
+  printf("Altura: 1,61m");
   pause();
 }
 
@@ -26,8 +33,13 @@ void exercices(int option) {
       exe1();
       break;
 
+    case 2:
+      exe2();
+      break;
+
     default:
       printf("Opção inválida!");
+      pause();
       break;
   }
 }
@@ -42,7 +54,7 @@ void menu(int qtdExercises) {
     printf("[ 0 ] SAIR\n");
 
     for (int i = 1; i <= qtdExercises; i++) {
-      printf("[ %d ] EXERCÍCIO %d\n");
+      printf("[ %d ] EXERCÍCIO %d\n", i, i);
     }
 
     printf("\n-------------------------------------------------------------\n");
