@@ -15,5 +15,5 @@ void main() {
     if (array[i] % 2 != 0) oddNumbersSum += array[i];
   }
 
-  printf("A soma de todos os números ímpares do vetor é: %d", oddNumbersSum);
+  printf("A soma de todos os números ímpares do vetor é: %d\n", oddNumbersSum);
 }
