@@ -137,6 +137,24 @@ void exe10() {
   for (int i = 0; i < 4; i++) printf("\n%d", digits[i]);
 }
 
+// 8.7
+void exe11() {
+  int seconds, minutes, hours;
+
+  printf("Insira uma quantidade de segundos: ");
+  scanf("%d", &seconds);
+
+  minutes = seconds / 60;
+  seconds -= 60 * minutes;
+
+  hours = minutes / 60;
+  minutes -= 60 * hours;
+
+  clear();
+
+  printf("%02d:%02d:%02d", hours, minutes, seconds);
+}
+
 void exercices(int option) {
   clear();
 
@@ -183,6 +201,10 @@ void exercices(int option) {
 
     case 10:
       exe10();
+      break;
+
+    case 11:
+      exe11();
       break;
 
     default:
