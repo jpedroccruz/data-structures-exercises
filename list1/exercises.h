@@ -102,6 +102,41 @@ void exe8() {
   printf("Valor da comissão (se a compra for parcelada): $ %.2f\n", total * 0.05);
 }
 
+// 8.5
+void exe9() {
+  int A, B, aux_var;
+
+  printf("Insira um valor para A: ");
+  scanf("%d", &A);
+
+  printf("Insira um valor para B: ");
+  scanf("%d", &B);
+
+  aux_var = A;
+  A = B;
+  B = aux_var;
+
+  clear();
+
+  printf("Valor de A: %d\n", A);
+  printf("Valor de B: %d", B);
+}
+
+// 8.6
+void exe10() {
+  int num, digits[4];
+
+  printf("Insira um número inteiro: ");
+  scanf("%d", &num);
+
+  digits[0] = num / 1000;
+  digits[1] = (num % 1000) / 100;
+  digits[2] = (num % 100) / 10;
+  digits[3] = num % 10;
+
+  for (int i = 0; i < 4; i++) printf("\n%d", digits[i]);
+}
+
 void exercices(int option) {
   clear();
 
@@ -140,6 +175,14 @@ void exercices(int option) {
 
     case 8:
       exe8();
+      break;
+
+    case 9:
+      exe9();
+      break;
+
+    case 10:
+      exe10();
       break;
 
     default:
