@@ -276,6 +276,37 @@ void exe17() {
   printf("O maior número é o %.2f", higher);
 }
 
+// 14
+void exe18() {
+  float numbers[4], higher, lower;
+  int i, positive = 0, negative = 0;
+
+  for (i = 0; i < 4; i++) {
+    printf("Insira um número: ");
+    scanf("%f", &numbers[i]);
+
+    if (numbers[i] > 0) positive++;
+    else if (numbers[i] < 0) negative++;
+
+    printf("\n");
+  }
+
+  clear();
+
+  higher = numbers[0];
+  lower = numbers[0];
+
+  for (int i = 1; i < 3; i++) {
+    if (numbers[i] > higher) higher = numbers[i];
+    else if (numbers[i] < lower) lower = numbers[i]; 
+  }
+
+  printf("O maior número é o %.2f\n", higher);
+  printf("O menor número é o %.2f\n", lower);
+  printf("Quantidade de números positivos: %d\n", positive);
+  printf("Quantidade de números negativos: %d", negative);
+}
+
 void exercices(int option) {
   clear();
 
@@ -350,6 +381,10 @@ void exercices(int option) {
 
     case 17:
       exe17();
+      break;
+
+    case 18:
+      exe18();
       break;
 
     default:
