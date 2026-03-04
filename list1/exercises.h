@@ -74,6 +74,20 @@ void exe6() {
   printf("Área do círculo: %.2f", 3.14 * (radius * radius));
 }
 
+void exe7() {
+  float reals, dollarPrice;
+
+  printf("Insira uma quantidade em reais para saber a correspondência em dólar: ");
+  scanf("%f", &reals);
+
+  printf("Insira a cotação atual do dólar: ");
+  scanf("%f", &dollarPrice);
+
+  clear();
+
+  printf("R$ %.2f -> US$ %.2f", reals, reals / dollarPrice);
+}
+
 void exercices(int option) {
   clear();
 
@@ -104,6 +118,10 @@ void exercices(int option) {
 
     case 6:
       exe6();
+      break;
+
+    case 7:
+      exe7();
       break;
 
     default:
