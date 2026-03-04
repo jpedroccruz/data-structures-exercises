@@ -1,0 +1,28 @@
+1. Implemente uma função chamada minha_strlen que receba uma string como parâmetro e retorne seu tamanho. A implementação deve ser feita manualmente, sem o uso de funções da biblioteca <string.h>. Lembre-se de que o tamanho da string não inclui o caractere nulo '\0'.
+
+
+2. Escreva um programa que leia uma string do usuário e contabilize a quantidade de vogais, consoantes e espaços em branco presentes na string. Considere apenas letras do alfabeto e desconsidere diferenças entre maiúsculas e minúsculas.
+
+
+3. Desenvolva um programa que leia uma string e imprima duas versões: a string original e a string invertida. A inversão deve ser feita manualmente, sem utilizar funções prontas da biblioteca padrão.
+
+
+4. Escreva um programa que leia uma string e verifique se ela é um palíndromo, ou seja, se pode ser lida da mesma forma da esquerda para a direita e vice-versa. O programa deve informar claramente se a string é ou não um palíndromo.
+
+
+5. Implemente uma função chamada minha_strcmp que compare duas strings e retorne um valor inteiro indicando se elas são iguais, ou qual delas é lexicograficamente maior. A implementação deve ser feita sem utilizar a função strcmp.
+
+
+6. Escreva um programa que leia uma frase e remova todos os espaços duplicados, mantendo apenas um único espaço entre palavras. A string resultante deve ser exibida ao final do processamento.
+
+
+7. Desenvolva um programa que leia uma string e dois caracteres. O programa deve substituir todas as ocorrências do primeiro caractere pelo segundo dentro da string, exibindo o resultado final.
+
+
+8. Escreva um programa que leia uma string contendo palavras separadas por vírgula. O programa deve separar essas palavras e imprimir cada uma em uma linha diferente. A implementação deve ser feita manualmente, sem utilizar a função strtok.
+
+
+9. Desenvolva um programa que leia uma frase e conte quantas palavras existem nela. Considere que as palavras são separadas por espaços e que não há pontuação complexa envolvida.
+
+
+10. Escreva um programa que leia uma string contendo três informações separadas pelo caractere ';': um identificador numérico (id), um nome e uma matrícula. O programa deve percorrer a string manualmente, separar cada uma das três partes e imprimir os valores individualmente no seguinte formato: “ID: ...”, “Nome: ...” e “Matrícula: ...”. Não é permitido o uso de funções prontas como strtok.
