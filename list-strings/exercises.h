@@ -14,22 +14,49 @@ void clear() {
   system("clear");
 }
 
-void exe1() {
-  
+int minha_strcmp(char str1[], char str2[]) {
+  int i = 0;
+
+  while (str1[i] == str2[i] && str1[i] != '\0' && str2[i] != '\0') {
+    i++;
+  }
+
+  return str1[i] - str2[i];
 }
 
+// 5
+void exe1() {
+  char word1[30], word2[30];
+
+  printf("Insira uma palavra: ");
+  scanf(" %[^\n]", word1);
+
+  printf("Insira outra palavra: ");
+  scanf(" %[^\n]", word2);
+
+  clear();
+
+  if (minha_strcmp(word1, word2) == 0) printf("As palavras iguais");
+  else if (minha_strcmp(word1, word2) > 0) printf("A palavra %s é lexicograficamente 'maior' que a palavra %s", word1, word2);
+  else printf("A palavra %s é lexicograficamente 'maior' que a palavra %s", word2, word1);
+}
+
+// 6
 void exe2() {
   
 }
 
+// 8
 void exe3() {
   
 }
 
+// 9
 void exe4() {
   
 }
 
+// 10
 void exe5() {
   
 }
