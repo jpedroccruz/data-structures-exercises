@@ -205,19 +205,18 @@ void exe13() {
 
 // 10
 void exe14() {
-  float radius;
+  float num1, num2;
 
-  printf("Insira o raio do círculo para saber a área: ");
-  scanf("%f", &radius);
+  printf("Insira um número: ");
+  scanf("%f", &num1);
+  
+  printf("Insira outro número: ");
+  scanf("%f", &num2);
 
   clear();
 
-  if (radius < 0) {
-    printf("ERRO: Raio negativo");
-    return;
-  }
-
-  printf("Área do círculo: %.2f", 3.14 * (radius * radius));
+  if (num1 > 0 && num2 > 0) printf("Valores são válidos");
+  else printf("Valores inválidos");
 }
 
 void exercices(int option) {
