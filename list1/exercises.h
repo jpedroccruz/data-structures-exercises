@@ -396,6 +396,39 @@ void exe22() {
   else if (age >= 21 && age <= 25) printf("PROFISSIONAL");
 }
 
+// 19
+void exe23() {
+  float grade;
+  int fouls;
+
+  printf("Insira sua nota: ");
+  scanf("%f", &grade);
+
+  printf("Quantas faltas você possui? ");
+  scanf("%d", &fouls);
+
+  clear();
+
+  printf("Sua nota é: ");
+  
+  if (grade >= 9 && grade <= 10) {
+    if (fouls > 20) printf("B");
+    else printf("A");
+  } else if (grade >= 7.5 && grade < 9) {
+    if (fouls > 20) printf("C");
+    else printf("B");
+  } else if (grade >= 5 && grade < 7.5) {
+    if (fouls > 20) printf("D");
+    else printf("C");
+  } else if (grade >= 4 && grade < 5) {
+    if (fouls > 20) printf("E");
+    else printf("D");
+  } else if (grade >= 0 && grade < 4) {
+    if (fouls > 20) printf("E");
+    else printf("E");
+  }
+}
+
 void exercices(int option) {
   clear();
 
@@ -491,7 +524,11 @@ void exercices(int option) {
     case 22:
       exe22();
       break;
-    
+
+    case 23:
+      exe23();
+      break;
+
     default:
       printf("Opção inválida!");
       break;
