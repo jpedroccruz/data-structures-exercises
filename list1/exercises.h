@@ -343,6 +343,25 @@ void exe19() {
   printf("A = %d, B = %d, C = %d", A, B, C);
 }
 
+// 16
+void exe20() {
+  int x, y;
+
+  printf("Insira o valor de X: ");
+  scanf("%d", &x);
+
+  printf("Insira o valor de Y: ");
+  scanf("%d", &y);
+
+  clear();
+
+  if (x > 0 && y > 0) printf("Quadrante 1");
+  else if (x < 0 && y > 0) printf("Quadrante 2");
+  else if (x < 0 && y < 0) printf("Quadrante 3");
+  else if (x > 0 && y < 0) printf("Quadrante 4");
+  else printf("Não está em nenhum quadrante específico.");
+}
+
 void exercices(int option) {
   clear();
 
@@ -425,6 +444,10 @@ void exercices(int option) {
 
     case 19:
       exe19();
+      break;
+
+    case 20:
+      exe20();
       break;
 
     default:
