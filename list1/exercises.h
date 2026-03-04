@@ -197,10 +197,27 @@ void exe13() {
 
   if (num2 == 0) {
     printf("ERRO: Divisão por 0");
-    return 0;
+    return;
   }
 
   printf("%.1f / %.1f = %.1f", num1, num2, num1 / num2);
+}
+
+// 10
+void exe14() {
+  float radius;
+
+  printf("Insira o raio do círculo para saber a área: ");
+  scanf("%f", &radius);
+
+  clear();
+
+  if (radius < 0) {
+    printf("ERRO: Raio negativo");
+    return;
+  }
+
+  printf("Área do círculo: %.2f", 3.14 * (radius * radius));
 }
 
 void exercices(int option) {
@@ -261,6 +278,10 @@ void exercices(int option) {
 
     case 13:
       exe13();
+      break;
+
+    case 14:
+      exe14();
       break;
 
     default:
