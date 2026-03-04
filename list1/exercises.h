@@ -155,6 +155,34 @@ void exe11() {
   printf("%02d:%02d:%02d", hours, minutes, seconds);
 }
 
+// 8.8
+void exe12() {
+  float award, bets[3], totalBet, proportionalValue;
+  int i;
+
+  printf("Insira o valor do prêmio: ");
+  scanf("%f", &award);
+
+  clear();
+
+  for (i = 0; i < 3; i++) {
+    printf("Insira quanto o amigo %d apostou: ", i + 1);
+    scanf("%f", &bets[i]);
+
+    totalBet += bets[i];
+
+    printf("\n");
+  }
+
+  clear();
+
+  for (i = 0; i < 3; i++) {
+    proportionalValue = award * (bets[i] / totalBet);
+
+    printf("O amigo %d ganhou: %.2f\n", i + 1, proportionalValue);
+  }
+}
+
 void exercices(int option) {
   clear();
 
@@ -205,6 +233,10 @@ void exercices(int option) {
 
     case 11:
       exe11();
+      break;
+
+    case 12:
+      exe12();
       break;
 
     default:
