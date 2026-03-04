@@ -88,6 +88,20 @@ void exe7() {
   printf("R$ %.2f -> US$ %.2f", reals, reals / dollarPrice);
 }
 
+void exe8() {
+  float total;
+
+  printf("Insira o valor total: $ ");
+  scanf("%f", &total);
+
+  clear();
+
+  printf("Total a pagar com desconto de 10%: $ %.2f\n", total * 0.9);
+  printf("Valor de cada parcela em 3x sem juros: $ %.2f\n", total / 3);
+  printf("Valor da comissão (se a compra for a vista): $ %.2f\n", (total * 0.9) * 0.05);
+  printf("Valor da comissão (se a compra for parcelada): $ %.2f\n", total * 0.05);
+}
+
 void exercices(int option) {
   clear();
 
@@ -122,6 +136,10 @@ void exercices(int option) {
 
     case 7:
       exe7();
+      break;
+
+    case 8:
+      exe8();
       break;
 
     default:
