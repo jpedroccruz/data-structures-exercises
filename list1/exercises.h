@@ -236,6 +236,24 @@ void exe15() {
   printf("Área do círculo: %.2f", 3.14 * (radius * radius));
 }
 
+// 12
+void exe16() {
+  float num1, num2;
+
+  printf("Insira um número: ");
+  scanf("%f", &num1);
+
+  printf("Insira outro número: ");
+  scanf("%f", &num2);
+
+  clear();
+
+  if (num1 > num2) printf("O número maior é o %.2f", num1);
+  else if (num2 > num1) printf("O número maior é o %.2f", num2);
+  else printf("Os números são iguais");
+}
+
+
 void exercices(int option) {
   clear();
 
@@ -302,6 +320,10 @@ void exercices(int option) {
 
     case 15:
       exe15();
+      break;
+
+    case 16:
+      exe16();
       break;
 
     default:
