@@ -71,7 +71,7 @@ void exe6() {
 
   clear();
 
-  printf("Área do círculo: %.2f", 3.14 );
+  printf("Área do círculo: %.2f", 3.14 * (radius * radius));
 }
 
 void exercices(int option) {
