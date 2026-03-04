@@ -464,6 +464,23 @@ void exe25() {
   else if (A * A < B * B + C * C) printf("Triângulo acutângulo"); 
 }
 
+// 21
+void exe26() {
+  float height;
+  int sex;
+
+  printf("Insira sua altura (em m): ");
+  scanf("%f", &height);
+
+  printf("Insira seu sexo (1. MASC | 2. FEMI): ");
+  scanf("%d", &sex);
+
+  clear();
+
+  if (sex == 1) printf("O peso ideal para o seu sexo e altura é: %.2f kg", 72.7 * height - 58);
+  else printf("O peso ideal para o seu sexo e altura é: %.2f kg", 62.1 * height - 44.7);
+}
+
 void exercices(int option) {
   clear();
 
@@ -570,6 +587,10 @@ void exercices(int option) {
 
     case 25:
       exe25();
+      break;
+
+    case 26:
+      exe26();
       break;
 
     default:
