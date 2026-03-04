@@ -63,6 +63,17 @@ void exe5() {
   printf("Peso da pessoa 2: %.2f kg", weight[2]);
 }
 
+void exe6() {
+  float radius;
+
+  printf("Insira o raio do círculo para saber a área: ");
+  scanf("%f", &radius);
+
+  clear();
+
+  printf("Área do círculo: %.2f", 3.14 );
+}
+
 void exercices(int option) {
   clear();
 
@@ -89,6 +100,10 @@ void exercices(int option) {
     
     case 5:
       exe5();
+      break;
+
+    case 6:
+      exe6();
       break;
 
     default:
