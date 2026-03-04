@@ -183,6 +183,26 @@ void exe12() {
   }
 }
 
+// 9
+void exe13() {
+  float num1, num2;
+
+  printf("Insira um número: ");
+  scanf("%f", &num1);
+  
+  printf("Insira outro número: ");
+  scanf("%f", &num2);
+  
+  clear();
+
+  if (num2 == 0) {
+    printf("ERRO: Divisão por 0");
+    return 0;
+  }
+
+  printf("%.1f / %.1f = %.1f", num1, num2, num1 / num2);
+}
+
 void exercices(int option) {
   clear();
 
@@ -237,6 +257,10 @@ void exercices(int option) {
 
     case 12:
       exe12();
+      break;
+
+    case 13:
+      exe13();
       break;
 
     default:
