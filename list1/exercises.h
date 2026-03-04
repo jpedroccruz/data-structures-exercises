@@ -381,6 +381,21 @@ void exe21() {
   else printf("Super econômico");
 }
 
+// 18
+void exe22() {
+  int age;
+
+  printf("Insira sua idade: ");
+  scanf("%d", &age);
+
+  clear();
+
+  if (age >= 5 && age <=10) printf("INFANTIL");
+  else if (age >= 11 && age <= 15) printf("JUVENIL");
+  else if (age >= 16 && age <= 20) printf("JÚNIOR");
+  else if (age >= 21 && age <= 25) printf("PROFISSIONAL");
+}
+
 void exercices(int option) {
   clear();
 
@@ -471,6 +486,10 @@ void exercices(int option) {
 
     case 21:
       exe21();
+      break;
+
+    case 22:
+      exe22();
       break;
     
     default:
