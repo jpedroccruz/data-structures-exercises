@@ -253,6 +253,28 @@ void exe16() {
   else printf("Os números são iguais");
 }
 
+// 13
+void exe17() {
+  float numbers[3], higher;
+
+  printf("Insira um número: ");
+  scanf("%f", &numbers[0]);
+
+  printf("Insira outro número: ");
+  scanf("%f", &numbers[1]);
+
+  printf("Insira outro número: ");
+  scanf("%f", &numbers[2]);
+
+  clear();
+
+  higher = numbers[0];
+  for (int i = 1; i < 3; i++) {
+    if (numbers[i] > higher) higher = numbers[i];
+  }
+
+  printf("O maior número é o %.2f", higher);
+}
 
 void exercices(int option) {
   clear();
@@ -324,6 +346,10 @@ void exercices(int option) {
 
     case 16:
       exe16();
+      break;
+
+    case 17:
+      exe17();
       break;
 
     default:
