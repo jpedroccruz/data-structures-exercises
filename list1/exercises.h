@@ -362,6 +362,25 @@ void exe20() {
   else printf("Não está em nenhum quadrante específico.");
 }
 
+// 17
+void exe21() {
+  float distance, litres, consume;
+
+  printf("Insira a distância (em km): ");
+  scanf("%f", &distance);
+
+  printf("Insira a quantidade de litros de gasolina consumidos: ");
+  scanf("%f", &litres);
+
+  consume = distance/litres;
+
+  clear();
+
+  if (consume < 8) printf("Venda o carro!");
+  else if (consume >= 8 && consume <= 14) printf("Econômico!");
+  else printf("Super econômico");
+}
+
 void exercices(int option) {
   clear();
 
@@ -450,6 +469,10 @@ void exercices(int option) {
       exe20();
       break;
 
+    case 21:
+      exe21();
+      break;
+    
     default:
       printf("Opção inválida!");
       break;
