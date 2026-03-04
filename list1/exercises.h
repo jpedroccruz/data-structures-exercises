@@ -410,7 +410,7 @@ void exe23() {
   clear();
 
   printf("Sua nota é: ");
-  
+
   if (grade >= 9 && grade <= 10) {
     if (fouls > 20) printf("B");
     else printf("A");
@@ -427,6 +427,19 @@ void exe23() {
     if (fouls > 20) printf("E");
     else printf("E");
   }
+}
+
+void exe24() {
+  int age, timeWorked;
+
+  printf("Insira a sua idade: ");
+  scanf("%d", &age);
+
+  printf("Insira quanto tempo de serviço você tem: ");
+  scanf("%d", &timeWorked);
+
+  if (age >= 65 || timeWorked >= 30 || (age >= 60 && timeWorked >= 25)) printf("Pode aposentar");
+  else printf("Não pode aposentar");
 }
 
 void exercices(int option) {
@@ -527,6 +540,10 @@ void exercices(int option) {
 
     case 23:
       exe23();
+      break;
+
+    case 24:
+      exe24();
       break;
 
     default:
