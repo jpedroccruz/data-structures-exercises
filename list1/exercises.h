@@ -307,6 +307,42 @@ void exe18() {
   printf("Quantidade de números negativos: %d", negative);
 }
 
+// 15
+void exe19() {
+  int A, B, C, aux_var;
+  
+  printf("Insira um valor para A: ");
+  scanf("%d", &A);
+
+  printf("Insira um valor para B: ");
+  scanf("%d", &B);
+
+  printf("Insira um valor para C: ");
+  scanf("%d", &C);
+
+  clear();
+
+  if (A > B) {
+    aux_var = A;
+    A = B;
+    B = aux_var;
+  }   
+
+  if (B > C) {
+    aux_var = B;
+    B = C;
+    C = aux_var;
+  }
+
+  if (A > B) {
+    aux_var = A;
+    A = B;
+    B = aux_var;
+  }   
+
+  printf("A = %d, B = %d, C = %d", A, B, C);
+}
+
 void exercices(int option) {
   clear();
 
@@ -385,6 +421,10 @@ void exercices(int option) {
 
     case 18:
       exe18();
+      break;
+
+    case 19:
+      exe19();
       break;
 
     default:
