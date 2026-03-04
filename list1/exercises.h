@@ -429,6 +429,7 @@ void exe23() {
   }
 }
 
+// 20
 void exe24() {
   int age, timeWorked;
 
@@ -440,6 +441,27 @@ void exe24() {
 
   if (age >= 65 || timeWorked >= 30 || (age >= 60 && timeWorked >= 25)) printf("Pode aposentar");
   else printf("Não pode aposentar");
+}
+
+// 20.4
+void exe25() {
+  int A, B, C;
+
+  printf("Insira o lado A do triângulo: ");
+  scanf("%d", &A);
+
+  printf("Insira o lado B do triângulo: ");
+  scanf("%d", &B);
+
+  printf("Insira o lado C do triângulo: ");
+  scanf("%d", &C);
+
+  clear();
+
+  if (A >= B + C) printf("Nenhum triângulo formado");
+  else if (A * A == B * B + C * C) printf("Triângulo retângulo"); 
+  else if (A * A > B * B + C * C) printf("Triângulo obtusângulo"); 
+  else if (A * A < B * B + C * C) printf("Triângulo acutângulo"); 
 }
 
 void exercices(int option) {
@@ -544,6 +566,10 @@ void exercices(int option) {
 
     case 24:
       exe24();
+      break;
+
+    case 25:
+      exe25();
       break;
 
     default:
