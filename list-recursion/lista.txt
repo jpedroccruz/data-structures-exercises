@@ -1,0 +1,82 @@
+1. Escreva uma função recursiva que receba um número inteiro positivo n e retorne o valor de n! (fatorial de n). Em seguida, escreva um programa que leia um número do usuário e utilize essa função para calcular e imprimir o resultado.
+
+2. Desenvolva uma função recursiva que calcule o valor da sequência de Fibonacci para um número n. A função deve retornar o n-ésimo termo da sequência. Escreva um programa que leia n e imprima o resultado.
+
+3. Escreva uma função recursiva que calcule a soma dos n primeiros números naturais. Por exemplo, se n = 5, o resultado deve ser 1 + 2 + 3 + 4 + 5 = 15.
+
+4. Implemente uma função recursiva que receba um número inteiro positivo n e calcule a soma de seus dígitos. Por exemplo, para n = 1234, o resultado deve ser 10.
+
+5. Escreva uma função recursiva que receba dois números inteiros positivos a e b e calcule a^b (a elevado a b) utilizando recursão.
+
+6. Desenvolva uma função recursiva que imprima todos os números inteiros de n até 0. O valor de n deve ser fornecido pelo usuário.
+
+7. Escreva uma função recursiva que imprima todos os números de 0 até n. O valor de n deve ser fornecido pelo usuário.
+
+8. Desenvolva uma função recursiva que conte quantos dígitos existem em um número inteiro positivo fornecido pelo usuário.
+
+9. Escreva uma função recursiva que inverta um número inteiro. Por exemplo, se o usuário digitar 1234, o programa deve imprimir 4321.
+
+10. Desenvolva uma função recursiva que verifique se um número inteiro é par ou ímpar sem utilizar operadores de módulo (%). A solução deve usar chamadas recursivas.
+
+11. Escreva uma função recursiva que calcule o máximo divisor comum (MDC) entre dois números inteiros utilizando o algoritmo de Euclides.
+
+12. Desenvolva uma função recursiva que calcule a soma dos elementos de um vetor de inteiros. O vetor e seu tamanho devem ser fornecidos ao programa.
+
+13. Escreva uma função recursiva que encontre o maior elemento de um vetor de inteiros.
+
+14. Desenvolva uma função recursiva que conte quantas vezes um determinado valor aparece em um vetor de inteiros.
+
+15. Escreva uma função recursiva que calcule a soma de todos os números de um vetor que sejam pares.
+
+16. Desenvolva uma função recursiva que calcule a soma dos elementos de uma matriz n x n.
+
+17. Escreva uma função recursiva que verifique se uma string é um palíndromo. A função deve comparar caracteres do início e do final da string recursivamente.
+
+18. Desenvolva uma função recursiva que conte quantas vogais existem em uma string fornecida pelo usuário.
+
+19. Escreva uma função recursiva que imprima todos os elementos de um vetor em ordem inversa.
+
+20. Desenvolva uma função recursiva que realize uma busca linear em um vetor de inteiros. A função deve retornar o índice do elemento procurado ou -1 caso ele não esteja presente no vetor.
+
+21. Escreva uma função recursiva que calcule a soma dos quadrados dos n primeiros números naturais. Por exemplo, para n = 4, o resultado deve ser 1² + 2² + 3² + 4² = 30.
+
+22. Desenvolva uma função recursiva que receba um número inteiro positivo n e retorne a soma dos números pares entre 1 e n.
+
+23. Escreva uma função recursiva que determine se um número inteiro positivo é um número perfeito. Um número perfeito é aquele cuja soma de seus divisores próprios (excluindo ele mesmo) é igual ao próprio número.
+
+24. Desenvolva uma função recursiva que conte quantos dígitos pares existem em um número inteiro positivo.
+
+25. Escreva uma função recursiva que calcule o produto entre dois números inteiros positivos utilizando apenas adições sucessivas.
+
+26. Desenvolva uma função recursiva que determine se um número inteiro é palíndromo (ex.: 12321). A verificação deve ser feita manipulando os dígitos do número.
+
+27. Escreva uma função recursiva que calcule a soma dos dígitos de um número até restar apenas um dígito.
+Exemplo:
+9875 → 9+8+7+5 = 29 → 2+9 = 11 → 1+1 = 2.
+
+28. Desenvolva uma função recursiva que conte quantas vezes um determinado dígito aparece em um número inteiro.
+
+29. Escreva uma função recursiva que determine se um vetor de inteiros está ordenado em ordem crescente.
+
+30. Desenvolva uma função recursiva que encontre o menor valor presente em um vetor de inteiros.
+
+31. Escreva uma função recursiva que conte quantos números negativos existem em um vetor de inteiros.
+
+32. Desenvolva uma função recursiva que calcule a média dos elementos de um vetor de números inteiros.
+
+33. Escreva uma função recursiva que verifique se todos os elementos de um vetor são iguais.
+
+34. Desenvolva uma função recursiva que conte quantos caracteres existem em uma string sem utilizar a função strlen.
+
+35. Escreva uma função recursiva que conte quantas letras maiúsculas existem em uma string.
+
+36. Desenvolva uma função recursiva que conte quantas palavras existem em uma frase. Considere que as palavras são separadas por espaços.
+
+37. Escreva uma função recursiva que remova todos os caracteres 'a' de uma string.
+
+38. Desenvolva uma função recursiva que imprima uma string ao contrário.
+
+39. Escreva uma função recursiva que verifique se duas strings são iguais, sem utilizar a função strcmp.
+
+40. Desenvolva uma função recursiva que gere e imprima todas as sequências possíveis de n caracteres formadas apenas pelos caracteres '0' e '1'. Por exemplo, para n = 3, as sequências são:
+000, 001, 010, 011, 100, 101, 110, 111.
