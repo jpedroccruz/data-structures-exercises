@@ -30,10 +30,10 @@ void exe1() {
   char word1[30], word2[30];
 
   printf("Insira uma palavra: ");
-  scanf(" %30[^\n]", word1);
+  scanf(" %29[^\n]", word1);
 
   printf("Insira outra palavra: ");
-  scanf(" %30[^\n]", word2);
+  scanf(" %29[^\n]", word2);
 
   clear();
 
@@ -48,7 +48,7 @@ void exe2() {
   int i = 0, j = 0;
 
   printf("Insira uma frase qualquer: ");
-  scanf(" %50[^\n]", str);
+  scanf(" %49[^\n]", str);
 
   while (str[i] != '\0') {
     if (str[i] == ' ' && str[i + 1] == ' ') i++;
@@ -66,7 +66,17 @@ void exe2() {
 
 // 8
 void exe3() {
-  
+  char str[50];
+
+  printf("Insira uma frase separando as palavras por vírgula (,): ");
+  scanf(" %49[^\n]", str);
+
+  clear();
+
+  for (int i = 0; i < strlen(str); i++) {
+    if (str[i] == ',') printf("\n");
+    else printf("%c", str[i]);
+  }
 }
 
 // 9
