@@ -81,7 +81,19 @@ void exe3() {
 
 // 9
 void exe4() {
-  
+  char str[50];
+  int qttSpaces = 0;
+
+  printf("Insira uma frase: ");
+  scanf(" %49[^\n]", str);
+
+  clear();
+
+  for (int i = 0; i < strlen(str); i++) {
+    if (str[i] == ' ') qttSpaces++;
+  }
+
+  printf("A frase digitada tem %d espaços", qttSpaces);
 }
 
 // 10
