@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void pause() {
   getchar();
@@ -29,10 +30,10 @@ void exe1() {
   char word1[30], word2[30];
 
   printf("Insira uma palavra: ");
-  scanf(" %[^\n]", word1);
+  scanf(" %30[^\n]", word1);
 
   printf("Insira outra palavra: ");
-  scanf(" %[^\n]", word2);
+  scanf(" %30[^\n]", word2);
 
   clear();
 
@@ -43,7 +44,24 @@ void exe1() {
 
 // 6
 void exe2() {
-  
+  char str[50];
+  int i = 0, j = 0;
+
+  printf("Insira uma frase qualquer: ");
+  scanf(" %50[^\n]", str);
+
+  while (str[i] != '\0') {
+    if (str[i] == ' ' && str[i + 1] == ' ') i++;
+    else {
+      str[j] = str[i];
+      i++;
+      j++;
+    }
+  }
+
+  str[j] = '\0';
+
+  printf("String formatada: %s", str);
 }
 
 // 8
