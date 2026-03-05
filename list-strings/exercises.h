@@ -98,7 +98,52 @@ void exe4() {
 
 // 10
 void exe5() {
-  
+  char data[3][100];
+  int i, j;
+
+  for (i = 0; i < 3; i++) {
+    printf("Insira seus dados no formato ID;NOME;MATRÍCULA: ");
+    scanf(" %99[^\n]", data[i]);
+  }
+
+  clear();
+
+  for (i = 0; i < 3; i++) {
+    printf("ID: ");
+    
+    for (j = 0; j < strlen(data[i]); j++) {
+      if (data[i][j] == ';') {
+        printf(", ");
+        j++;
+        break;
+      }
+      printf("%c", data[i][j]);
+    }
+
+    printf("NOME: ");
+
+    for (j; j < strlen(data[i]); j++) {
+      if (data[i][j] == ';') {
+        printf(", ");
+        j++;
+        break;
+      }
+      printf("%c", data[i][j]);
+    }
+
+    printf("MATRÍCULA: ");
+
+    for (j; j < strlen(data[i]); j++) {
+      if (data[i][j] == ';') {
+        printf(", ");
+        j++;
+        break;
+      }
+      printf("%c", data[i][j]);
+    }
+
+    printf("\n");
+  }
 }
 
 void exercices(int option) {
