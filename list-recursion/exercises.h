@@ -38,8 +38,26 @@ void exe1() {
 }
 
 // 16
-void exe2() {
+int exe2_recursive(int matrix[][2], int i, int j) {
+  if (i == 2) return 0;
+  if (j == 2) return exe2_recursive(matrix, i + 1, 0);
 
+  return matrix[i][j] + exe2_recursive(matrix, i, j + 1);
+}
+
+void exe2() {
+  int matrix[2][2], i, j;
+
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+      printf("Insira um valor para [%d][%d]: ", i, j);
+      scanf("%d", &matrix[i][j]);
+    }
+  }
+
+  clear();
+
+  printf("A soma dos elementos da matriz é: %d", exe2_recursive(matrix, 0, 0));
 }
 
 // 17
