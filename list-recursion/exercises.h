@@ -16,8 +16,25 @@ void clear() {
 }
 
 // 9
+void exe1_recursive(int num) {
+  if (num == 0) return;
+
+  int lastDigit = num % 10; 
+  printf("%d", lastDigit);
+
+  exe1_recursive(num / 10);
+}
+
 void exe1() {
-  
+  int num;
+
+  printf("Insira um número: ");
+  scanf("%d", &num);
+
+  clear();
+
+  printf("O número %d ao contrário fica: ", num);
+  exe1_recursive(num);
 }
 
 // 16
@@ -42,7 +59,7 @@ void exe5() {
 
 // 40
 void exe6() {
-  
+
 }
 
 void exercices(int option) {
