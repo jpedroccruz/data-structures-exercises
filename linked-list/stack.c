@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// FILO - First In Last Out
+
 typedef struct Node {
   int item;
   struct Node *next;

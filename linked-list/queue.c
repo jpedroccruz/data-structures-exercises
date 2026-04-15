@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// FIFO - First In First Out
+
 typedef struct Node {
   int item;
   struct Node *next;
