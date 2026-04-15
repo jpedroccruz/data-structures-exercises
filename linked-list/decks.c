@@ -42,7 +42,8 @@ void backPop(Node **begin) {
   Node *penult = *begin;
   
   if (penult->next == NULL) {
-    Node *deleted = penult->next;
+    Node *deleted = penult;
+    free(deleted);
     *begin = NULL;
     return;
   }
