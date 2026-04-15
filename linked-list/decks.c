@@ -42,6 +42,7 @@ void backPop(Node **begin) {
   Node *penult = *begin;
   
   if (penult->next == NULL) {
+    Node *deleted = penult->next;
     *begin = NULL;
     return;
   }
@@ -63,16 +64,18 @@ int main(void) {
   
   printf("Inserir 1 no final: \n");
   backPush(&begin, 1);
+  print(begin);
+
   printf("Inserir 2 no final: \n");
   backPush(&begin, 2);
+  print(begin);
 
   printf("Inserir 3 no começo: \n");
   frontPush(&begin, 3);
+  print(begin);
+
   printf("Inserir 4 no começo: \n");
   frontPush(&begin, 4);
-
-  printf("\n");
-
   print(begin);
 
   printf("\n");
