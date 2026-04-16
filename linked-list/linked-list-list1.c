@@ -102,6 +102,20 @@ void frontPop(Node **begin) {
   free(deleted);
 }
 
+void backPop(Node **begin) {
+  if (*begin == NULL) return;
+  Node *brief = *begin;
+
+  if (brief->next == NULL) {
+    free(brief);
+    *begin = NULL;
+  }
+
+  while (brief->next->next != NULL) brief = brief->next;
+  free(brief->next);
+  brief->next = NULL;
+}
+
 int main(void) {
   Node *begin;
   initList(&begin);
@@ -129,6 +143,10 @@ int main(void) {
   printf("\nO menor valor da lista é: %d\n", getLowestValue(begin));
 
   frontPop(&begin);
+  printListElements(begin);
 
+  printf("\n");
+
+  backPop(&begin);
   printListElements(begin);
 }
