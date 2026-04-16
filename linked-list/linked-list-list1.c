@@ -93,6 +93,15 @@ int getLowestValue(Node *begin) {
   return lower;
 }
 
+
+// 11
+void frontPop(Node **begin) {
+  if (*begin == NULL) return;
+  Node *deleted = *begin;
+  *begin = (*begin)->next; 
+  free(deleted);
+}
+
 int main(void) {
   Node *begin;
   initList(&begin);
@@ -117,5 +126,9 @@ int main(void) {
   else printf("O valor %d não existe", element);
 
   printf("\nO maior valor da lista é: %d", getHighestValue(begin));
-  printf("\nO menor valor da lista é: %d", getLowestValue(begin));
+  printf("\nO menor valor da lista é: %d\n", getLowestValue(begin));
+
+  frontPop(&begin);
+
+  printListElements(begin);
 }
