@@ -19,7 +19,7 @@ int isListEmpty(Node *begin) {
 }
 
 // 4
-void addElementInList(Node **begin, int info) {
+void frontPush(Node **begin, int info) {
   Node *n = malloc(sizeof(Node));
   n->info = info;
   n->next = *begin;
@@ -41,13 +41,29 @@ void printListElements(Node *begin) {
 }
 
 // 6
+void backPush(Node **begin, int item) {
+  Node *n = malloc(sizeof(Node));
+  n->info = item;
+  n->next = NULL;
+
+  if (*begin == NULL) {
+    *begin = n;
+    return;
+  }
+
+  Node *last = *begin;
+  while (last->next != NULL) last = last->next;
+  last->next = n; 
+}
+
+// 7
 int listLength(Node *begin) {
   int length = 0;
   for (Node *n = begin; n != NULL; n = n->next) length++;
   return length;
 }
 
-// 7
+// 8
 int isValueOnList(Node *begin, int element) {
   for (Node *n = begin; n != NULL; n = n->next) 
     if (n->info == element) return 1;
@@ -61,11 +77,13 @@ int main(void) {
 
   if (isListEmpty(begin)) printf("Lista vazia\n");
 
-  addElementInList(&begin, 1);
-  addElementInList(&begin, 2);
-  addElementInList(&begin, 3);
+  frontPush(&begin, 1);
+  frontPush(&begin, 2);
+  frontPush(&begin, 3);
 
   printListElements(begin);
+
+  backPush(&begin, 4);
 
   printf("\nTamanho da lista: %d", listLength(begin));
 
