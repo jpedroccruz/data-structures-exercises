@@ -102,6 +102,7 @@ void frontPop(Node **begin) {
   free(deleted);
 }
 
+// 12
 void backPop(Node **begin) {
   if (*begin == NULL) return;
   Node *brief = *begin;
@@ -114,6 +115,30 @@ void backPop(Node **begin) {
   while (brief->next->next != NULL) brief = brief->next;
   free(brief->next);
   brief->next = NULL;
+}
+
+// 13
+void removeItem(Node **begin, int item) {
+  if (*begin == NULL) return;  
+  Node *n = *begin;
+
+  if (n->info == item) {
+    Node *deleted = n;
+    *begin = n->next;
+    free(deleted);
+    return;
+  }
+
+  while (n->next != NULL) {
+    if (n->next->info == item) {
+      Node *deleted = n->next;
+      n->next = deleted->next;
+      free(deleted);
+      return;
+    }
+
+    n = n->next;
+  }
 }
 
 int main(void) {
@@ -148,5 +173,18 @@ int main(void) {
   printf("\n");
 
   backPop(&begin);
+  printListElements(begin);
+  
+  printf("\n");
+
+  backPush(&begin, 10);
+  backPush(&begin, 20);
+  printListElements(begin);
+
+  printf("\n");
+
+  removeItem(&begin, 20);
+  removeItem(&begin, 10);
+  removeItem(&begin, 2);
   printListElements(begin);
 }
