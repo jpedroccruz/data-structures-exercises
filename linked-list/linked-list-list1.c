@@ -98,7 +98,7 @@ int getLowestValue(Node *begin) {
 void frontPop(Node **begin) {
   if (*begin == NULL) return;
   Node *deleted = *begin;
-  *begin = (*begin)->next; 
+  *begin = deleted->next; 
   free(deleted);
 }
 
@@ -138,6 +138,13 @@ void removeItem(Node **begin, int item) {
     }
 
     n = n->next;
+  }
+}
+
+// 14
+void removeAllElements(Node **begin) {
+  while (*begin != NULL) {
+    frontPop(begin);
   }
 }
 
@@ -186,5 +193,17 @@ int main(void) {
   removeItem(&begin, 20);
   removeItem(&begin, 10);
   removeItem(&begin, 2);
+  printListElements(begin);
+
+  printf("\n");
+
+  backPush(&begin, 10);
+  backPush(&begin, 20);
+  backPush(&begin, 30);
+  printListElements(begin);
+
+  printf("\n");
+
+  removeAllElements(&begin);
   printListElements(begin);
 }
