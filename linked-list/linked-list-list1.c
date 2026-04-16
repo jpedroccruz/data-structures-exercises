@@ -71,6 +71,17 @@ int isValueOnList(Node *begin, int element) {
   return 0;
 }
 
+// 9
+int getHighierValue(Node *begin) {
+  int highier = begin->info;
+
+  for (Node *n = begin; n != NULL; n = n->next) {
+    if (n->info > highier) highier = n->info;
+  }
+
+  return highier;
+}
+
 int main(void) {
   Node *begin;
   initList(&begin);
@@ -93,4 +104,6 @@ int main(void) {
 
   if (isValueOnList(begin, element)) printf("\nO valor %d existe", element);
   else printf("O valor %d não existe", element);
+
+  printf("\nO maior valor da lista é: %d", getHighierValue(begin));
 }
