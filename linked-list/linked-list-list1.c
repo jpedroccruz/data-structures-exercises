@@ -186,9 +186,36 @@ void reverseList(Node **begin) {
 
 // 17
 void joinLists(Node **begin1, Node **begin2) {
+  if (*begin1 == NULL) {
+    *begin1 = *begin2;
+    return;
+  }
+
   Node *last = *begin1;
   while (last->next != NULL) last = last->next;
   last->next = *begin2;
+}
+
+// 18
+void splitListsByPairOrOdd(Node **begin1, Node **begin2) {
+  Node *pair = NULL;
+  Node *odd = NULL;
+
+  for (Node *n = *begin1; n != NULL; n = n->next) {
+    if (n->info % 2 == 0) backPush(&pair, n->info);
+    else backPush(&odd, n->info);
+  }
+
+  for (Node *n = *begin2; n != NULL; n = n->next) {
+    if (n->info % 2 == 0) backPush(&pair, n->info);
+    else backPush(&odd, n->info);
+  }
+
+  removeAllElements(begin1);
+  removeAllElements(begin2);
+
+  *begin1 = pair;
+  *begin2 = odd;
 }
 
 int main(void) {
@@ -280,7 +307,17 @@ int main(void) {
   backPush(&begin2, 5);
   backPush(&begin2, 6);
 
-  joinLists(&begin1, &begin2);
+  // joinLists(&begin1, &begin2);
 
-  printListElements(begin1);  
+  // printListElements(begin1);  
+
+  splitListsByPairOrOdd(&begin1, &begin2);
+
+  printf("PARES:\n");
+  printListElements(begin1);
+
+  printf("\n");
+
+  printf("ÍMPARES:\n");
+  printListElements(begin2);
 }
