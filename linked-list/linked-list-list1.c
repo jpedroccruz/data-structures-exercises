@@ -110,6 +110,7 @@ void backPop(Node **begin) {
   if (brief->next == NULL) {
     free(brief);
     *begin = NULL;
+    return;
   }
 
   while (brief->next->next != NULL) brief = brief->next;
@@ -145,6 +146,27 @@ void removeItem(Node **begin, int item) {
 void removeAllElements(Node **begin) {
   while (*begin != NULL) {
     frontPop(begin);
+  }
+}
+
+// 15
+void removeDuplicates(Node **begin) {
+  if (*begin == NULL) return;
+
+  Node *n = *begin;
+
+  while (n != NULL) {
+    Node *m = n;
+
+    while (m->next != NULL) {
+      if (n->info == m->next->info) {
+        removeItem(&m->next, n->info);
+      } else {
+        m = m->next;
+      }
+    }
+
+    n = n->next;
   }
 }
 
@@ -205,5 +227,14 @@ int main(void) {
   printf("\n");
 
   removeAllElements(&begin);
+  printListElements(begin);
+
+  printf("\n");
+
+  backPush(&begin, 10);
+  backPush(&begin, 10);
+  backPush(&begin, 20);
+  backPush(&begin, 20);
+  removeDuplicates(&begin);
   printListElements(begin);
 }
