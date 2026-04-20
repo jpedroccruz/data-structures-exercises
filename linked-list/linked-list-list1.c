@@ -151,8 +151,6 @@ void removeAllElements(Node **begin) {
 
 // 15
 void removeDuplicates(Node **begin) {
-  if (*begin == NULL) return;
-
   Node *n = *begin;
 
   while (n != NULL) {
@@ -168,6 +166,22 @@ void removeDuplicates(Node **begin) {
 
     n = n->next;
   }
+}
+
+// 16
+void reverseList(Node **begin) {
+  Node *current = *begin;
+  Node *next = current->next;
+  Node *last = NULL;
+
+  while (current != NULL) {
+    next = current->next;
+    current->next = last;
+    last = current;
+    current = next;
+  }
+
+  *begin = last;
 }
 
 int main(void) {
@@ -236,5 +250,16 @@ int main(void) {
   backPush(&begin, 20);
   backPush(&begin, 20);
   removeDuplicates(&begin);
+  printListElements(begin);
+  removeAllElements(&begin);
+
+  printf("\n");
+  system("clear");
+
+  backPush(&begin, 10);
+  backPush(&begin, 20);
+  backPush(&begin, 30);
+  backPush(&begin, 40);
+  reverseList(&begin);
   printListElements(begin);
 }
