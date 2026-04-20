@@ -218,9 +218,19 @@ void splitListsByPairOrOdd(Node **begin1, Node **begin2) {
   *begin2 = odd;
 }
 
+int isListSorted(Node *begin) {
+  int aux;
+  
+  for (Node *n = begin; n != NULL; n = n->next)
+    for (Node *m = n->next; m != NULL; m = m->next)
+      if (m->info < n->info) return 0;
+
+  return 1;
+}
+
 int main(void) {
-  // Node *begin;
-  // initList(&begin);
+  Node *begin;
+  initList(&begin);
 
   // if (isListEmpty(begin)) printf("Lista vazia\n");
 
@@ -296,28 +306,31 @@ int main(void) {
   // reverseList(&begin);
   // printListElements(begin);
   
-  Node *begin1, *begin2;
-  initList(&begin1);
-  initList(&begin2);
+  // Node *begin1, *begin2;
+  // initList(&begin1);
+  // initList(&begin2);
 
-  backPush(&begin1, 1);
-  backPush(&begin1, 2);
-  backPush(&begin1, 3);
-  backPush(&begin2, 4);
-  backPush(&begin2, 5);
-  backPush(&begin2, 6);
+  backPush(&begin, 1);
+  backPush(&begin, 2);
+  backPush(&begin, 3);
+  backPush(&begin, 4);
+
+  if (isListSorted(begin)) printf("LISTA ORDENADA!");
+  else printf("LISTA NÃO ORDENADA");
 
   // joinLists(&begin1, &begin2);
 
   // printListElements(begin1);  
 
-  splitListsByPairOrOdd(&begin1, &begin2);
+  // splitListsByPairOrOdd(&begin1, &begin2);
 
-  printf("PARES:\n");
-  printListElements(begin1);
+  // printf("PARES:\n");
+  // printListElements(begin1);
 
-  printf("\n");
+  // printf("\n");
 
-  printf("ÍMPARES:\n");
-  printListElements(begin2);
+  // printf("ÍMPARES:\n");
+  // printListElements(begin2);
+
+
 }
