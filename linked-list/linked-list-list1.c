@@ -184,82 +184,103 @@ void reverseList(Node **begin) {
   *begin = last;
 }
 
+// 17
+void joinLists(Node **begin1, Node **begin2) {
+  Node *last = *begin1;
+  while (last->next != NULL) last = last->next;
+  last->next = *begin2;
+}
+
 int main(void) {
-  Node *begin;
-  initList(&begin);
+  // Node *begin;
+  // initList(&begin);
 
-  if (isListEmpty(begin)) printf("Lista vazia\n");
+  // if (isListEmpty(begin)) printf("Lista vazia\n");
 
-  frontPush(&begin, 1);
-  frontPush(&begin, 2);
-  frontPush(&begin, 3);
+  // frontPush(&begin, 1);
+  // frontPush(&begin, 2);
+  // frontPush(&begin, 3);
 
-  printListElements(begin);
+  // printListElements(begin);
 
-  backPush(&begin, 4);
+  // backPush(&begin, 4);
 
-  printf("\nTamanho da lista: %d", listLength(begin));
+  // printf("\nTamanho da lista: %d", listLength(begin));
 
-  int element;
-  printf("\nInsira um elemento para saber se ele está na lista: ");
-  scanf("%d", &element);
+  // int element;
+  // printf("\nInsira um elemento para saber se ele está na lista: ");
+  // scanf("%d", &element);
 
-  if (isValueOnList(begin, element)) printf("\nO valor %d existe", element);
-  else printf("O valor %d não existe", element);
+  // if (isValueOnList(begin, element)) printf("\nO valor %d existe", element);
+  // else printf("O valor %d não existe", element);
 
-  printf("\nO maior valor da lista é: %d", getHighestValue(begin));
-  printf("\nO menor valor da lista é: %d\n", getLowestValue(begin));
+  // printf("\nO maior valor da lista é: %d", getHighestValue(begin));
+  // printf("\nO menor valor da lista é: %d\n", getLowestValue(begin));
 
-  frontPop(&begin);
-  printListElements(begin);
+  // frontPop(&begin);
+  // printListElements(begin);
 
-  printf("\n");
+  // printf("\n");
 
-  backPop(&begin);
-  printListElements(begin);
+  // backPop(&begin);
+  // printListElements(begin);
   
-  printf("\n");
+  // printf("\n");
 
-  backPush(&begin, 10);
-  backPush(&begin, 20);
-  printListElements(begin);
+  // backPush(&begin, 10);
+  // backPush(&begin, 20);
+  // printListElements(begin);
 
-  printf("\n");
+  // printf("\n");
 
-  removeItem(&begin, 20);
-  removeItem(&begin, 10);
-  removeItem(&begin, 2);
-  printListElements(begin);
+  // removeItem(&begin, 20);
+  // removeItem(&begin, 10);
+  // removeItem(&begin, 2);
+  // printListElements(begin);
 
-  printf("\n");
+  // printf("\n");
 
-  backPush(&begin, 10);
-  backPush(&begin, 20);
-  backPush(&begin, 30);
-  printListElements(begin);
+  // backPush(&begin, 10);
+  // backPush(&begin, 20);
+  // backPush(&begin, 30);
+  // printListElements(begin);
 
-  printf("\n");
+  // printf("\n");
 
-  removeAllElements(&begin);
-  printListElements(begin);
+  // removeAllElements(&begin);
+  // printListElements(begin);
 
-  printf("\n");
+  // printf("\n");
 
-  backPush(&begin, 10);
-  backPush(&begin, 10);
-  backPush(&begin, 20);
-  backPush(&begin, 20);
-  removeDuplicates(&begin);
-  printListElements(begin);
-  removeAllElements(&begin);
+  // backPush(&begin, 10);
+  // backPush(&begin, 10);
+  // backPush(&begin, 20);
+  // backPush(&begin, 20);
+  // removeDuplicates(&begin);
+  // printListElements(begin);
+  // removeAllElements(&begin);
 
-  printf("\n");
-  system("clear");
+  // printf("\n");
+  
+  // backPush(&begin, 10);
+  // backPush(&begin, 20);
+  // backPush(&begin, 30);
+  // backPush(&begin, 40);
+  // reverseList(&begin);
+  // printListElements(begin);
+  
+  Node *begin1, *begin2;
+  initList(&begin1);
+  initList(&begin2);
 
-  backPush(&begin, 10);
-  backPush(&begin, 20);
-  backPush(&begin, 30);
-  backPush(&begin, 40);
-  reverseList(&begin);
-  printListElements(begin);
+  backPush(&begin1, 1);
+  backPush(&begin1, 2);
+  backPush(&begin1, 3);
+  backPush(&begin2, 4);
+  backPush(&begin2, 5);
+  backPush(&begin2, 6);
+
+  joinLists(&begin1, &begin2);
+
+  printListElements(begin1);  
 }
