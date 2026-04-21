@@ -218,6 +218,7 @@ void splitListsByPairOrOdd(Node **begin1, Node **begin2) {
   *begin2 = odd;
 }
 
+// 19
 int isListSorted(Node *begin) {
   int aux;
   
@@ -226,6 +227,31 @@ int isListSorted(Node *begin) {
       if (m->info < n->info) return 0;
 
   return 1;
+}
+
+// 20
+void pushInSortedList(Node **begin, int item) {
+  if (*begin == NULL) {
+    backPush(begin, item);
+    return;
+  }
+
+  if (item < (*begin)->info) {
+    frontPush(begin, item);
+    return;
+  }
+  
+  for (Node *n = *begin; n->next != NULL; n = n->next) {
+    if (n->next->info >= item) {
+      Node *m = malloc(sizeof(Node));
+      m->info = item;
+      m->next = n->next;
+      n->next = m;
+      return;
+    } 
+  }
+
+  backPush(begin, item);
 }
 
 int main(void) {
@@ -314,23 +340,25 @@ int main(void) {
   backPush(&begin, 2);
   backPush(&begin, 3);
   backPush(&begin, 4);
-
-  if (isListSorted(begin)) printf("LISTA ORDENADA!");
-  else printf("LISTA NÃO ORDENADA");
+  backPush(&begin, 5);
 
   // joinLists(&begin1, &begin2);
-
+  
   // printListElements(begin1);  
-
+  
   // splitListsByPairOrOdd(&begin1, &begin2);
-
+  
   // printf("PARES:\n");
   // printListElements(begin1);
-
+  
   // printf("\n");
-
+  
   // printf("ÍMPARES:\n");
   // printListElements(begin2);
+  
+  // if (isListSorted(begin)) printf("LISTA ORDENADA!");
+  // else printf("LISTA NÃO ORDENADA");
 
-
+  pushInSortedList(&begin, 0);
+  printListElements(begin);
 }
