@@ -19,6 +19,24 @@ int isQueueEmpty(Node *begin) {
   return 0;
 }
 
+// 5
+void enqueue(Node **begin, Node **end, int value) {
+  Node *newNode = malloc(sizeof(Node));
+  newNode->value = value;
+  newNode->next = NULL;
+  
+  if (*begin == NULL) {
+    *begin = newNode;
+    *end = newNode;
+    return;
+  }
+
+  Node *last = *begin;
+  while (last->next != NULL) last = last->next;
+  last->next = newNode;
+  *end = newNode;
+}
+
 int main() {
   //2
   Node *begin;
@@ -26,5 +44,7 @@ int main() {
 
   initQueue(&begin, &end);
 
-  if (isQueueEmpty(begin)) printf("A fila está vazia.");
+  enqueue(&begin, &end, 1);
+
+  if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
 }
