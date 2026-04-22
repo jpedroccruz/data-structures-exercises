@@ -77,6 +77,12 @@ Node *getNodeByValue(Node *begin, int value) {
   return NULL;
 }
 
+// 11
+int getPairsQuantity(Node *begin) {
+  if (begin == NULL) return 0;
+  return (begin->value % 2 == 0 ? 1 : 0) + getPairsQuantity(begin->next);
+}
+
 int main() {
   // 2
   Node *begin;
@@ -87,10 +93,12 @@ int main() {
   enqueue(&begin, &end, 1);
   enqueue(&begin, &end, 2);
   enqueue(&begin, &end, 3);
+  enqueue(&begin, &end, 4);
   dequeue(&begin);
 
   printListElements(begin);
-  if (getNodeByValue(begin, 6) == NULL) printf("O valor 6 não está na lista");
+  printf("Quantidade de elementos pares: %d", getPairsQuantity(begin));
+  // if (getNodeByValue(begin, 6) == NULL) printf("O valor 6 não está na lista");
   // printf("Tamanho da lista: %d", listLength(begin));
   //printf("\nPrimeiro elemento: %d", peak(begin));
 
