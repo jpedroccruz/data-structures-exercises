@@ -31,9 +31,7 @@ void enqueue(Node **begin, Node **end, int value) {
     return;
   }
 
-  Node *last = *begin;
-  while (last->next != NULL) last = last->next;
-  last->next = newNode;
+  (*end)->next = newNode;
   *end = newNode;
 }
 
