@@ -43,6 +43,11 @@ void dequeue(Node **begin) {
   free(deleted);
 }
 
+// 7
+int peak(Node *begin) {
+  return begin->value;
+}
+
 int main() {
   // 2
   Node *begin;
@@ -52,7 +57,10 @@ int main() {
 
   enqueue(&begin, &end, 1);
   enqueue(&begin, &end, 2);
+  enqueue(&begin, &end, 3);
   dequeue(&begin);
+
+  printf("Primeiro elemento: %d", peak(begin));
 
   // if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
 }
