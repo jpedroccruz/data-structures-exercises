@@ -62,6 +62,12 @@ void printListElements(Node *begin) {
   }
 }
 
+// 9
+int listLength(Node *begin) {
+  if (begin == NULL) return 0;
+  return 1 + listLength(begin->next);
+}
+
 int main() {
   // 2
   Node *begin;
@@ -75,7 +81,8 @@ int main() {
   dequeue(&begin);
 
   printListElements(begin);
-  printf("\nPrimeiro elemento: %d", peak(begin));
+  printf("Tamanho da lista: %d", listLength(begin));
+  //printf("\nPrimeiro elemento: %d", peak(begin));
 
   // if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
 }
