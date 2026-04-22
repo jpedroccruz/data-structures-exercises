@@ -6,3 +6,9 @@ typedef struct Node {
   int value;
   struct Node *next;
 } Node;
+
+int main() {
+  //2
+  Node *begin = NULL;
+  Node *end = NULL;
+}
