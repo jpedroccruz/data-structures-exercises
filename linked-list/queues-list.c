@@ -68,6 +68,15 @@ int listLength(Node *begin) {
   return 1 + listLength(begin->next);
 }
 
+// 10
+Node *getNodeByValue(Node *begin, int value) {
+  for (Node *node = begin; node != NULL; node = node->next)
+    if (node->value == value)
+      return node;
+
+  return NULL;
+}
+
 int main() {
   // 2
   Node *begin;
@@ -81,7 +90,8 @@ int main() {
   dequeue(&begin);
 
   printListElements(begin);
-  printf("Tamanho da lista: %d", listLength(begin));
+  if (getNodeByValue(begin, 6) == NULL) printf("O valor 6 não está na lista");
+  // printf("Tamanho da lista: %d", listLength(begin));
   //printf("\nPrimeiro elemento: %d", peak(begin));
 
   // if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
