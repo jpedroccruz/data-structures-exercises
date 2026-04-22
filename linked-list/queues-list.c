@@ -13,10 +13,18 @@ void initQueue(Node **begin, Node **end) {
   *end = NULL;
 }
 
+// 4
+int isQueueEmpty(Node *begin) {
+  if (begin == NULL) return 1;
+  return 0;
+}
+
 int main() {
   //2
   Node *begin;
   Node *end;
 
   initQueue(&begin, &end);
+
+  if (isQueueEmpty(begin)) printf("A fila está vazia.");
 }
