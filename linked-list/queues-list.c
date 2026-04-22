@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void pause() {
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF);
+  printf("\nPress Enter to continue...");
+  getchar();
+}
+
 // 1
 typedef struct Node {
   int value;
@@ -93,6 +100,48 @@ void clearList(Node **begin, Node **end) {
   *end = NULL;
 }
 
+// 13
+void customerService(Node **begin, Node **end) {
+  system("clear");
+  int option, clientNumber = 1;
+  
+  while (option != 0) {
+    printf("====== ATENDIMENTO BANCÁRIO ======\n");
+    printf("[ 1 ] ADICIONAR NÚMERO DO CLIENTE\n");
+    printf("[ 2 ] CHAMAR CLIENTE\n");
+    printf("[ 0 ] SAIR\n");
+    printf("|> Insira uma opção: ");
+    scanf("%d", &option);
+
+    switch (option) {
+      case 1:
+        printf("Cliente com senha %d adicionado à fila.", clientNumber);
+        enqueue(begin, end, clientNumber);
+        clientNumber++;
+        break;
+
+      case 2:
+        if (isQueueEmpty(*begin)) {
+          printf("Não há clientes na fila.");
+        } else {
+          printf("Chamando cliente com senha %d.", (*begin)->value);
+          dequeue(begin);
+        }
+        break;
+
+      case 0:
+        break;
+
+      default:
+        printf("Opção inválida.");
+        break;
+    }
+    
+    pause();
+    system("clear");
+  }
+}
+
 int main() {
   // 2
   Node *begin;
@@ -108,8 +157,8 @@ int main() {
 
   clearList(&begin, &end);
 
-  printListElements(begin);
-  printf("Quantidade de elementos pares: %d", getPairsQuantity(begin));
+  customerService(&begin, &end);
+  // printf("Quantidade de elementos pares: %d", getPairsQuantity(begin));
   // if (getNodeByValue(begin, 6) == NULL) printf("O valor 6 não está na lista");
   // printf("Tamanho da lista: %d", listLength(begin));
   //printf("\nPrimeiro elemento: %d", peak(begin));
