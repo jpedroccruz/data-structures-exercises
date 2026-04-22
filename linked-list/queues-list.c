@@ -7,8 +7,16 @@ typedef struct Node {
   struct Node *next;
 } Node;
 
+// 3
+void initQueue(Node **begin, Node **end) {
+  *begin = NULL;
+  *end = NULL;
+}
+
 int main() {
   //2
-  Node *begin = NULL;
-  Node *end = NULL;
+  Node *begin;
+  Node *end;
+
+  initQueue(&begin, &end);
 }
