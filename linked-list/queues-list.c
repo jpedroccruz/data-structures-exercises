@@ -48,6 +48,20 @@ int peak(Node *begin) {
   return begin->value;
 }
 
+// 8
+void printListElements(Node *begin) {
+  if (isQueueEmpty(begin)) {
+    printf("Não existe elementos na lista.");
+    return;
+  }
+
+  printf("Elementos: ");
+  for (Node *node = begin; node != NULL; node = node->next) {
+    printf("%d", node->value);
+    if (node->next != NULL) printf(",");
+  }
+}
+
 int main() {
   // 2
   Node *begin;
@@ -60,7 +74,8 @@ int main() {
   enqueue(&begin, &end, 3);
   dequeue(&begin);
 
-  printf("Primeiro elemento: %d", peak(begin));
+  printListElements(begin);
+  printf("\nPrimeiro elemento: %d", peak(begin));
 
   // if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
 }
