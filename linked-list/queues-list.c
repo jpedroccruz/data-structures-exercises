@@ -35,14 +35,24 @@ void enqueue(Node **begin, Node **end, int value) {
   *end = newNode;
 }
 
+// 6
+void dequeue(Node **begin) {
+  if (*begin == NULL) return;
+  Node *deleted = *begin;
+  *begin = deleted->next;
+  free(deleted);
+}
+
 int main() {
-  //2
+  // 2
   Node *begin;
   Node *end;
 
   initQueue(&begin, &end);
 
   enqueue(&begin, &end, 1);
+  enqueue(&begin, &end, 2);
+  dequeue(&begin);
 
-  if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
+  // if (!isQueueEmpty(begin)) printf("A fila não está vazia.");
 }
