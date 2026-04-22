@@ -83,6 +83,15 @@ int getPairsQuantity(Node *begin) {
   return (begin->value % 2 == 0 ? 1 : 0) + getPairsQuantity(begin->next);
 }
 
+// 12
+void clearList(Node **begin) {
+  while (*begin != NULL) {
+    Node *temp = *begin;
+    *begin = (*begin)->next;
+    free(temp);
+  }
+}
+
 int main() {
   // 2
   Node *begin;
@@ -95,6 +104,8 @@ int main() {
   enqueue(&begin, &end, 3);
   enqueue(&begin, &end, 4);
   dequeue(&begin);
+
+  clearList(&begin);
 
   printListElements(begin);
   printf("Quantidade de elementos pares: %d", getPairsQuantity(begin));
