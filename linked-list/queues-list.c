@@ -42,16 +42,31 @@ void enqueue(Node **begin, Node **end, int value) {
   *end = newNode;
 }
 
+// 12
+void clearList(Node **begin, Node **end) {
+  while (*begin != NULL) {
+    Node *temp = *begin;
+    *begin = (*begin)->next;
+    free(temp);
+  }
+  *end = NULL;
+}
+
 // 6
-void dequeue(Node **begin) {
+void dequeue(Node **begin, Node **end) {
   if (*begin == NULL) return;
   Node *deleted = *begin;
+  if ((*begin)->next == NULL) {
+    clearList(begin, end);
+    return;
+  }
   *begin = deleted->next;
   free(deleted);
 }
 
 // 7
 int peak(Node *begin) {
+  if (begin == NULL) return;
   return begin->value;
 }
 
@@ -90,20 +105,10 @@ int getPairsQuantity(Node *begin) {
   return (begin->value % 2 == 0 ? 1 : 0) + getPairsQuantity(begin->next);
 }
 
-// 12
-void clearList(Node **begin, Node **end) {
-  while (*begin != NULL) {
-    Node *temp = *begin;
-    *begin = (*begin)->next;
-    free(temp);
-  }
-  *end = NULL;
-}
-
 // 13
 void customerService(Node **begin, Node **end) {
   system("clear");
-  int option, clientNumber = 1;
+  int option = -1, clientNumber = 1;
   
   while (option != 0) {
     printf("====== ATENDIMENTO BANCÁRIO ======\n");
@@ -125,7 +130,7 @@ void customerService(Node **begin, Node **end) {
           printf("Não há clientes na fila.");
         } else {
           printf("Chamando cliente com senha %d.", (*begin)->value);
-          dequeue(begin);
+          dequeue(begin, end);
         }
         break;
 
@@ -153,7 +158,7 @@ int main() {
   enqueue(&begin, &end, 2);
   enqueue(&begin, &end, 3);
   enqueue(&begin, &end, 4);
-  dequeue(&begin);
+  dequeue(&begin, &end);
 
   clearList(&begin, &end);
 
