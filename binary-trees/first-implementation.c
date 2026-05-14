@@ -18,15 +18,18 @@ void addNode(Node **root, int value) {
 }
 
 void printTree(Node *tree) {
-  if (tree == NULL) return;
+  if (tree == NULL) {
+    printf("Árvore vazia.");
+    return;
+  }
 
   // pré ordem
   // em ordem
   // pós ordem
   
   printTree(tree->left);
-  printf("%d\n", tree->value);
   printTree(tree->right);
+  printf("%d\n", tree->value);
 }
 
 int countTreeNodes(Node *tree) {
@@ -73,17 +76,28 @@ int getNodeHeight(Node *tree, int value) {
   return getTreeHeight(binarySearch(tree, value));
 }
 
+void clearTree(Node **tree) {
+  if (*tree == NULL) return;
+  
+  clearTree(&(*tree)->left);
+  clearTree(&(*tree)->right);
+  free(*tree);
+
+  *tree = NULL;
+}
 
 int main(void) {
   Node *root = NULL;
 
-  addNode(&root, 2);
+  addNode(&root, 50);
 
-  addNode(&root->left, 1);
-  addNode(&root->right, 3);
+  addNode(&root->left, 30);
+  addNode(&root->left->left, 20);
+  addNode(&root->left->right, 40);
+  addNode(&root->left->right->right, 45);
 
-  addNode(&root->right->left, 4);
-  addNode(&root->right->right, 5);
+  addNode(&root->right, 70);
+  addNode(&root->right->right, 85);
 
   printTree(root);
   printf("Quantidade de nós: %d\n", countTreeNodes(root));
@@ -92,7 +106,9 @@ int main(void) {
   printf("Altura da árvore: %d\n", getTreeHeight(root));
   printf("Altura do node 2: %d\n", getNodeHeight(root, 2));
   printf("Valor 5 está na árvore? %s\n", getNodeByValue(root, 5) != NULL ? "Sim" : "Não");
-  printf("Valor 5 está na árvore? %s", binarySearch(root, 5) != NULL ? "Sim" : "Não");
+  printf("Valor 5 está na árvore? %s\n", binarySearch(root, 5) != NULL ? "Sim" : "Não");
+  clearTree(&root);
+  printTree(root);
 
   return 0;
 }
